@@ -1,0 +1,44 @@
+version: "3.1"
+stories:
+
+- story: Teste saudação e pedido de pastel completo
+  steps:
+  - user: |
+     ola!
+     Boa noite
+     Boa tarde
+     Bom dia
+     oi 
+|
+    intent: saudar
+  - action: utter_saudar
+  - user: "Eu gostaria de pedir um pastel"
+    intent: pedir_pastel
+  - action: utter_pedir_pastel
+  - user: "Eu quero um pastel de queijo"
+    intent: especificar_pastel
+    entities:
+    - sabor: "queijo"
+  - action: utter_ especificar_pastel
+  - user: "Entrega na Rua das Flores, 231"
+    intent: informar_endereço
+    entities:
+    - endereço: "Rua das Flores, 231"
+  - action: utter_informar_endereço
+  - user: "Sim, quero confirmar o pedido"
+    intent: confirmar_pedido
+  - action: utter_confirmar_pedido
+
+- story: Teste cancelamento de pedido
+  steps: 
+  - user: "Quero um pastel de carne"
+    intent: especificar_pastel
+    entities:
+    - sabor: "carne"
+  - action: utter_ especificar_pastel
+  - user: "Na verdade, cancele meu pedido por favor"
+    intent: cancelar_pedido
+  - action: utter_cancelar_pedido
+    
+
+

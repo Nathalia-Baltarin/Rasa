@@ -1,0 +1,52 @@
+version: "3.1"
+
+intents:
+  - saudar
+  - pedir_pastel
+  - especificar_pastel
+  - informar_endereço
+  - confirmar_pedido
+  - cancelar_pedido
+
+entities:
+  - sabor
+  - endereço
+
+slots:
+  endereço:
+     type: text
+     mappings:
+         - type: from_entity
+           entity: endereço
+  sabor:
+    type: text
+    mappings: 
+        - type: from_entity
+          entity: sabor
+
+responses:
+
+    utter_saudar:
+         - text: "Olá! Como posso ajudá-lo hoje?" 
+    utter_pedir_pastel:
+         - text: "Claro! Que sabor de pastel você gostaria?"
+    utter_especificar_pastel:
+        - text: "Ótimo, um pastel de (sabor). Qual é o endereço de entrega?" 
+    utter_informar _endereco:
+        - text: "Perfeito, seu pastel será entregue em (endereco). Você gostaria de confirmar o pedido?"
+    utter_confirmar_pedido:
+        - text: "Pedido confirmado! Seu pastel chegará em breve. Alguma outra coisa?"
+    utter_cancelar_pedido:
+        - text: "Pedido cancelado. Se precisar de mais alguma coisa, estou à disposição!"
+actions:
+- utter_saudar
+- utter_pedir_pastel
+- utter_especificar_pastel
+- utter_informar_endereço
+- utter_confirmar_pedido
+- utter_cancelar_pedido
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

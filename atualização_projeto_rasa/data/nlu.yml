@@ -1,0 +1,40 @@
+version: "3.1"
+
+nlu:
+- intent: saudar
+  examples: |
+    - Oi
+    - Olá
+    - Bom dia
+    - Boa tarde
+    - Boa noite
+    - Oi, tudo bem?
+
+  - intent: pedir_pastel
+    examples: |
+      - Eu gostaria de pedir um pastel
+      - Quero um pastel, por favor
+      - Pode me ajudar a pedir um pastel por favor?
+
+  - intent: especificar_sabor
+    examples: |
+      - Quero um pastel de [calabresa](sabor)
+      - Um pastel de [queijo](sabor), por favor
+      - Pode ser de [carne](sabor)
+
+  - intent: informar_endereço
+    examples: |
+      - O endereço de entrega é [Rua das Flores, 231](endereço)
+      - Endereço é [Rua Romeu Babilonico, 254](endereço)
+
+  - intent: confirmar_pedido
+    examples: |
+      - Sim
+      - Sim está correto
+      - Pedido confirmado
+
+  - intent: cancelar_pedido
+    examples: |
+      - Não
+      - Quero cancelar
+      - Pedido cancelado

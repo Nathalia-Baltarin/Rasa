@@ -1,0 +1,27 @@
+version: "3.1"
+
+stories:
+
+- story: Saudação do usuário e pedido de pastel
+  steps:
+  - intent: saudar
+  - action: utter_saudar
+  - intent: pedir_pastel
+  - action: utter_pedir_pastel
+  - intent: especificar_pastel
+  - action: utter_especificar_pastel
+  - intent: informar_endereço
+  - action: utter_informar_endereço
+  - intent: confirmar_pedido
+  - action: utter_confirmar_pedido
+
+- story: Pedido de pastel com cancelamento
+  steps:
+  - intent: pedir_pastel
+  - action: utter_pedir_pastel
+  - intent: especificar_pastel
+  - action: utter_especificar_pastel
+  - intent: cancelar_pedido
+  - action: utter_cancelar_pedido
+  
+

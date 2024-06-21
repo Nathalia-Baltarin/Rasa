@@ -1,0 +1,38 @@
+version: "3.1"
+
+rules:
+    -rule: Saudar o usuário de volta
+     steps:
+        - intent: saudar
+        - action: utter_saudar
+
+    -rule: Responder ao pedido de pastel
+     steps:
+        - intent: pedir_pastel
+        - action: utter_pedir_pastel
+        
+    -rule: Confirmar sabor de pastel
+    condition:
+        - active_loop: null
+     steps:
+        - intent: especificar_pastel
+        - action: utter_especificar_pastel
+
+    -rule: Confirmar endereço 
+    condition:
+        - active_loop: null
+     steps:
+        - intent: informar_endereço
+        - action: utter_informar_endereço
+
+
+    -rule: Confirmar o pedido de pastel
+     steps:
+        - intent: confirmar_pedido
+        - action: utter_confirmar_pedido
+
+
+    -rule: Cancelar o pedido de pastel
+     steps:
+        - intent: cancelar_pedido
+        - action: utter_cancelar_pedido
